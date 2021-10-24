@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: ./buildscripts/build.ps1 quick-deploy
+      shell: powershell
