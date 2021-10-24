@@ -18,3 +18,15 @@ jobs:
     - name: build
       run: ./buildscripts/build.ps1 quick-deploy
       shell: powershell
+      
+    - name: Build Artifacts - zip
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: zip
+        path: './BuildArtifacts/Boxstarter.*.zip'
+
+    - name: Build Artifacts - nupkg
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: nupkg
+        path: './BuildArtifacts/Boxstarter.*.nupkg'
